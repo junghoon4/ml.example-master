@@ -3,17 +3,19 @@ import pandas as pd
 
 import os, sys
 
-# cur_path  = os.getcwd()
-MM_MODEL = '/mm/project/model/'
-# print('current path : %s' % cur_path)
-MM_DATA = '/mm/project/data_in/'
+home = os.environ['project_home']
+workflow_home = os.environ['workflow_path']
+step = "models"
+target_path = os.environ['target_path']
+seq = os.environ.get('seq', '0')
+
+MM_MODEL = home + '/model/' 
+MM_DATA = home + '/data_in/' 
 target = 'LOGISTIC'
-#######################
 
 if not os.path.exists(MM_MODEL):
     os.mkdir(MM_MODEL)
-# Our model - a multiclass regression
-# FIRST we initialize it with default params or specify some
+
 X_train = pd.read_csv(MM_DATA + 'X_train.csv')
 X_test = pd.read_csv(MM_DATA + 'X_test.csv')
 y_train = pd.read_csv(MM_DATA + 'Y_train.csv')
@@ -39,6 +41,7 @@ if target == 'LOGISTIC':
 
 elif target == 'ARD':
     model = ARDRegression()
+    
 # Train on iris training set
 # SECOND we give the model some training data
 model.fit(X_train, y_train)
