@@ -29,7 +29,7 @@ if not os.path.exists(MM_MODEL):
 
 X_train = pd.read_csv(os.path.join(MM_DATA, 'X_train.csv'))
 X_test = pd.read_csv(os.path.join(MM_DATA, 'X_test.csv'))
-y_train = pd.read_csv(os.path.join((MM_DATA, 'Y_train.csv'))
+y_train = pd.read_csv(os.path.join(MM_DATA, 'Y_train.csv'))
 y_test = pd.read_csv(os.path.join(MM_DATA, 'Y_test.csv'))
 
 train_col = ['target', 'path', 'score', 'args']
