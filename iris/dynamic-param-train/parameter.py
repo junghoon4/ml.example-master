@@ -35,8 +35,8 @@ import getpass
 print(getpass.getuser())
 import subprocess
 print(subprocess.check_output('whoami'))
-a = subprocess.check_output(['ls','-al','/mm/project/data_in'])
-print(a.decode('utf-8'))
+# a = subprocess.check_output(['ls','-al','/mm/project/data_in'])
+# print(a.decode('utf-8'))
 
 X_train.to_csv(DATA_PATH + 'X_train.csv', index=False)
 X_test.to_csv(DATA_PATH + 'X_test.csv', index=False)
