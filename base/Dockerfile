@@ -69,4 +69,8 @@ ENV LANG 'ko_KR.utf8'
 
 COPY run.py /home/splunk/run.py
 
+USER root
+RUN chmod 666 /home/splunk/*.py
+USER splunk
+
 ENTRYPOINT ["python3", "/home/splunk/run.py"]
