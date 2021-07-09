@@ -26,8 +26,8 @@ RUN apt-get update \
                ca-certificates \
                git
 
-RUN adduser --disabled-password --gecos "" splunk -u 2001 &> /dev/null
-RUN addgroup splunk staff &> /dev/null
+RUN adduser --disabled-password --gecos "" splunk -u 2001\
+    && addgroup splunk staff
 
 USER splunk
 WORKDIR /home/splunk
