@@ -1,0 +1,16 @@
+parameter:
+  - name: max_trial_count
+    description: 최대 시도 횟수
+    required: true
+    default_value: 2
+  - name: parallel_trial_count
+    description: 최대 동시 실행 개수
+    required: true
+    default_value: 1
+  - name: is_prod
+    description: 운영여부
+    required: true
+    allowable_values: 
+      - true
+      - false
+    default_value: true  
