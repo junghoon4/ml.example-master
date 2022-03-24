@@ -1,5 +1,6 @@
+entry: asset_init
 parameter:
-  - name: max_trial_count
+  - name: asset_try_count
     description: 최대 시도 횟수
     required: true
     default_value: 2
